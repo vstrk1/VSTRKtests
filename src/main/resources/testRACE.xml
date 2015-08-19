@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Testing Race" parallel="tests" thread-count="6" >
+    <test name="1">
+        <groups>
+            <run>
+                <include name="thread1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+    <test name="2">
+        <groups>
+            <run>
+                <include name="thread2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+    <test name="3">
+        <groups>
+            <run>
+                <include name="thread3"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+    <test name="4">
+        <groups>
+            <run>
+                <include name="thread4"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+    <test name="5">
+        <groups>
+            <run>
+                <include name="thread5"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+    <test name="6">
+        <groups>
+            <run>
+                <include name="thread6"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.race.tests.ContentAndNForms"/>
+        </classes>
+    </test>
+</suite>
