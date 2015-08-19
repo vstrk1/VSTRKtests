@@ -1,9 +1,9 @@
 package com.inf;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class NegativeForm extends BasePage  {
@@ -12,9 +12,9 @@ public class NegativeForm extends BasePage  {
     public  NegativeForm( WebDriver driver, WebElement one, WebElement button, WebElement acceptMessage) throws Exception {   //тест на однострочную форму
         super(driver);
         try{
-            verifyElementIsPresent(one);                                                //Проверяем поле
+            verifyElementIsPresent(one);                                            //Проверяем поле
             sendAndAssertNegativeTest(button, acceptMessage);                       //Отправка сообщения без данных
-        }catch (ElementNotFoundException e) {e.printStackTrace();}              //Еррор если чтото пошло не так
+        }catch (ElementNotFoundException e) {e.printStackTrace();}                  //Еррор если чтото пошло не так
 
         try {
             verifyElementIsPresent(one);
@@ -27,14 +27,16 @@ public class NegativeForm extends BasePage  {
                setMobileNumber(one);
                sendAndAssertNegativeTest(button, acceptMessage);
                one.clear();
-
             }
+        }catch (ElementNotVisibleException e){
+            e.printStackTrace();
+        }
 
     }
 
 
     public void sendAndAssertNegativeTest(WebElement button, WebElement acceptMessage)  {
-        wait.until(ExpectedConditions.elementToBeClickable(button));
+        //wait.until(ExpectedConditions.elementToBeClickable(button));
         for(int i =1 ; i<5; i++){
             clickOnElement(button);
         }

@@ -161,4 +161,16 @@ public class ContentAndNForms {
         c.socialBt();
         c.futerSubscribeN();
     }
+
+
+    @Test
+    public void ttttttttt() throws  Exception{
+        mmPage.loadRACE();
+        mmPage.expampleOneField();
+    }
+
+
+
+
+
 }
