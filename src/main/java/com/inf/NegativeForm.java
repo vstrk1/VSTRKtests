@@ -34,7 +34,6 @@ public class NegativeForm extends BasePage  {
 
     }
 
-
     public void sendAndAssertNegativeTest(WebElement button, WebElement acceptMessage)  {
         //wait.until(ExpectedConditions.elementToBeClickable(button));
         for(int i =1 ; i<5; i++){
