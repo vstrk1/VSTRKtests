@@ -4,9 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by v.stuparenko on 20.07.2015.
- */
 public class ConstantElements extends BasePage {
     //MOBILE BUTTONS
     @FindBy(xpath = "//div[@class='mobile-buttons']/a[1]") WebElement androidButton;

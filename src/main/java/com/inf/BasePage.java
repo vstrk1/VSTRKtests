@@ -42,7 +42,6 @@ public class BasePage  extends DataPages{
     }
     public void watchOnFcPopUp(WebElement element){
 
-
     }
     public void loadPage() {
         driver.get(getPageUrl());

@@ -66,7 +66,8 @@ public class MainPage extends BasePage {
 
     }
     public void expampleOneField() throws Exception {
-       new NegativeForm(this.driver,phoneCallme,buttonPhoneCallme,popUpClose);
+       new NegativeForm( this.driver, phoneCallme,buttonPhoneCallme,popUpClose);
+       new NegativeForm(this.driver, nameSubscr, mailSubscr, buttonSubcr, popUpClose);
 
     }
     public void testPhonePositive() throws Exception {
