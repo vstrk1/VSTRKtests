@@ -1,35 +1,33 @@
 package com.inf;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class NegativeForm extends BasePage {
+import java.awt.*;
 
-    public  NegativeForm( WebDriver driver , WebElement one, WebElement button, WebElement acceptMessage) throws Exception {   //тест на однострочную форму
+public class NegativeForm extends BasePage {
+   static int countNF = 1;
+
+    public  NegativeForm( WebDriver driver , WebElement one, WebElement button, WebElement acceptMessage) throws Exception {
         super(driver);
-        try{
-            verifyElementIsPresent(one);
+
+        verifyElementIsPresent(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        if(one.getAttribute("name").contains("phone")) {
+            setElementText(one);
             sendAndAssertNegativeTest(button, acceptMessage);
-        }catch (ElementNotFoundException e) {e.printStackTrace();}
-        try {
-            verifyElementIsPresent(one);
-            if (one.getAttribute("name").contains("phone")) {
-                setElementText(one);
-                sendAndAssertNegativeTest(button, acceptMessage);
-                one.clear();
-            }
-            if (one.getAttribute("name").contains("email")){
-               setMobileNumber(one);
-               sendAndAssertNegativeTest(button, acceptMessage);
-               one.clear();
-            }
-        }catch (ElementNotVisibleException e){
-            e.printStackTrace();
-        }
+            one.clear();}
+
+        else if(one.getAttribute("name").contains("email")){
+            setElementText(one);
+            sendAndAssertNegativeTest(button, acceptMessage);
+            one.clear();}
+        else System.out.println("The element " + one + "is not have attribute!");
+        Robot r = new Robot();
+        
     }
 
     public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement button, WebElement acceptMessage) throws  Exception{
@@ -63,7 +61,7 @@ public class NegativeForm extends BasePage {
 
             else if (two.getAttribute("name").contains("email")){
             setElementText(one);
-            setEmailAdress(two);
+            setElementText(two);
             sendAndAssertNegativeTest(button, acceptMessage);
             one.clear();
             two.clear();}
@@ -80,6 +78,7 @@ public class NegativeForm extends BasePage {
 
 
     public void sendAndAssertNegativeTest(WebElement button, WebElement acceptMessage) {
+
         wait.until(ExpectedConditions.elementToBeClickable(button));
         for(int i=1; i<5; i++) {
             clickOnElement(button);
@@ -89,10 +88,9 @@ public class NegativeForm extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Assert.assertTrue(!acceptMessage.isDisplayed());
-
-
-
-
+        System.out.println();
+        Assert.assertTrue(!acceptMessage.isDisplayed(), "\n" + "Negative test # " + countNF + " is failed - form sent");
+        System.out.println("Negative test # " + countNF + " is passed");
+        countNF++;
     }
 }
