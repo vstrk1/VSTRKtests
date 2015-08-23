@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-import java.awt.*;
-
 public class NegativeForm extends BasePage {
    static int countNF = 1;
 
@@ -26,7 +24,7 @@ public class NegativeForm extends BasePage {
             sendAndAssertNegativeTest(button, acceptMessage);
             one.clear();}
         else System.out.println("The element " + one + "is not have attribute!");
-        Robot r = new Robot();
+       // Robot r = new Robot();
         
     }
 
@@ -74,11 +72,492 @@ public class NegativeForm extends BasePage {
             two.clear();
     }
 
+    public NegativeForm (WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+    }
+
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four, WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+    }
 
 
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four,WebElement five, WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        verifyElementIsPresent(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+    }
+
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four,WebElement five,WebElement six ,WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        verifyElementIsPresent(five);
+        verifyElementIsPresent(six);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+    }
+
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four,WebElement five,WebElement six ,WebElement seven, WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        verifyElementIsPresent(five);
+        verifyElementIsPresent(six);
+        verifyElementIsPresent(seven);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+
+    }
+
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four,WebElement five,WebElement six ,WebElement seven,WebElement eight, WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        verifyElementIsPresent(five);
+        verifyElementIsPresent(six);
+        verifyElementIsPresent(seven);
+        verifyElementIsPresent(eight);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        setElementText(eight);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+        eight.clear();
+    }
+
+    public NegativeForm(WebDriver driver, WebElement one, WebElement two, WebElement three ,WebElement four,WebElement five,WebElement six ,WebElement seven,WebElement eight, WebElement nine,WebElement button, WebElement acceptMessage) throws Exception {
+        super(driver);
+        verifyElementIsPresent(one);
+        verifyElementIsPresent(two);
+        verifyElementIsPresent(three);
+        verifyElementIsPresent(four);
+        verifyElementIsPresent(five);
+        verifyElementIsPresent(six);
+        verifyElementIsPresent(seven);
+        verifyElementIsPresent(eight);
+        verifyElementIsPresent(nine);
+        sendAndAssertNegativeTest(button, acceptMessage);
+
+        setElementText(one);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+
+        setElementText(one);
+        setElementText(two);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        setElementText(eight);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+        eight.clear();
+
+        setElementText(one);
+        setElementText(two);
+        setElementText(three);
+        setElementText(four);
+        setElementText(five);
+        setElementText(six);
+        setElementText(seven);
+        setElementText(eight);
+        setElementText(nine);
+        sendAndAssertNegativeTest(button, acceptMessage);
+        one.clear();
+        two.clear();
+        three.clear();
+        four.clear();
+        five.clear();
+        six.clear();
+        seven.clear();
+        eight.clear();
+        nine.clear();
+    }
 
     public void sendAndAssertNegativeTest(WebElement button, WebElement acceptMessage) {
-
         wait.until(ExpectedConditions.elementToBeClickable(button));
         for(int i=1; i<5; i++) {
             clickOnElement(button);
