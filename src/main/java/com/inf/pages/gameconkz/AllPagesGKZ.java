@@ -1,11 +1,20 @@
 package com.inf.pages.gameconkz;
 
-/**
- * Created by v.stuparenko on 03.08.2015.
- */
-public class AllPagesGKZ {
+import java.util.ArrayList;
 
-   /*http://gamingcongress.kz/ru
+public class AllPagesGKZ {
+  ArrayList[] sites;
+
+  public AllPagesGKZ(){
+
+
+   }
+
+
+  }
+
+
+   /* http://gamingcongress.kz/ru
     http://gamingcongress.kz/ru/program
     http://gamingcongress.kz/ru/Demoarea
     http://gamingcongress.kz/?#business
@@ -18,4 +27,4 @@ public class AllPagesGKZ {
     http://gamingcongress.kz/ru/become-sponsor
     http://gamingcongress.kz/ru/become-speaker
 */
-}
+

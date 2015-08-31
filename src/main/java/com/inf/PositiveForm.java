@@ -1,10 +1,6 @@
 package com.inf;
-
 import org.openqa.selenium.WebElement;
 
-/**
- * Created by v.stuparenko on 05.08.2015.
- */
 public class PositiveForm {
 
 

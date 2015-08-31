@@ -1,11 +1,8 @@
 package com.inf;
 
-import com.inf.data.DataPages;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
@@ -14,10 +11,7 @@ import org.xml.sax.InputSource;
 
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringReader;
+import java.io.*;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URLConnection;
@@ -27,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-public class BasePage  extends DataPages{
+public class BasePage{
     public  WebDriver driver;
     public WebDriverWait wait;
     public String PAGE_URL;
@@ -43,6 +37,22 @@ public class BasePage  extends DataPages{
     public void watchOnFcPopUp(WebElement element){
 
     }
+
+    public void loadSomePage(String url, String title){
+        driver.get(url);
+        //waitForPageLoaded(driver);
+       // long navigationStart = (Long) js.executeScript(("return window.performance.timing.navigationStart"));//начало загрузки страницы
+        //long loadEventEnd = (Long) js.executeScript("return window.performance.timing.loadEventEnd"); // окончание загрузки страницы
+        Assert.assertEquals(driver.getTitle(),title, "Title is not verified");
+        //System.out.println("Page load time is :  " + (loadEventEnd - navigationStart) / 1000 + " second");
+
+    }
+
+    public void tk() throws IOException {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        // Now you can do whatever you need to do with it, for example copy somewhere
+        FileUtils.copyFile(scrFile, new File("D:\\Unity\\scr1.png"));
+    }
     public void loadPage() {
         driver.get(getPageUrl());
         waitForPageLoaded(driver);
@@ -55,11 +65,11 @@ public class BasePage  extends DataPages{
         System.out.println("Title is verified");
     }
     public void waitForPageLoaded(WebDriver driver) {
-        ExpectedCondition<Boolean> expectation = new
-                ExpectedCondition<Boolean>() {
-                    public Boolean apply(WebDriver driver) {
-                        return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
-                    }};
+        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+            }
+        };
         Wait<WebDriver> wait = new WebDriverWait(driver,60);
         try {
             wait.until(expectation);
@@ -91,7 +101,7 @@ public class BasePage  extends DataPages{
     }
     public boolean verifyElementIsHaveLink(WebElement element, String text) {
         verifyElementIsPresent(element);
-        Assert.assertEquals(element.getAttribute("href"), text);
+        Assert.assertEquals(element.getAttribute("href"), text,"Element is not have link !"+"\n");
         //System.out.println("Element " + element + " have true link");
 
         return true;

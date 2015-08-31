@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by v.stuparenko on 20.07.2015.
- */
 public class ExponentsPage  extends BasePage{
     @FindBy(css = ".exponents-left>h1") WebElement exponentsHeader;
     @FindBy(css = "#speaks>h2") WebElement speakersHeader;

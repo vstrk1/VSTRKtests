@@ -1,6 +1,5 @@
 package com.race.tests;
 
-import com.inf.data.DataPages;
 import com.inf.pages.race.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,12 +7,8 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
-/**
- * Created by v.stuparenko on 28.07.2015.
- */
 public class AllPositiveForms {
     public WebDriver driver;
     MainPage mmPage;
