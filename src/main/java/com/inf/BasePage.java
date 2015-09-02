@@ -1,5 +1,9 @@
 package com.inf;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.sun.xml.internal.ws.handler.HandlerException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
@@ -28,19 +32,16 @@ public class BasePage{
     public String PAGE_TITLE;
     public String eMail;
     public JavascriptExecutor js;
-
+    private static int dg=0;
     public BasePage(WebDriver driver) throws Exception {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
         this.js = (JavascriptExecutor) driver;
     }
-    public void watchOnFcPopUp(WebElement element){
-
-    }
 
     public void loadSomePage(String url, String title){
         driver.get(url);
-        //waitForPageLoaded(driver);
+       // waitForPageLoaded(driver);
        // long navigationStart = (Long) js.executeScript(("return window.performance.timing.navigationStart"));//начало загрузки страницы
         //long loadEventEnd = (Long) js.executeScript("return window.performance.timing.loadEventEnd"); // окончание загрузки страницы
         Assert.assertEquals(driver.getTitle(),title, "Title is not verified");
@@ -49,10 +50,28 @@ public class BasePage{
     }
 
     public void tk() throws IOException {
+
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         // Now you can do whatever you need to do with it, for example copy somewhere
-        FileUtils.copyFile(scrFile, new File("D:\\Unity\\scr1.png"));
+        FileUtils.copyFile(scrFile, new File("D:\\Unity\\scr" + dg + ".png"));
+        dg++;
     }
+
+    public void htmlUnitCheckResponse(String url) throws IOException {
+        WebClient webClient = new WebClient(BrowserVersion.CHROME);
+        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
+        java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
+        HtmlPage htmlP = webClient.getPage(url);
+        try{
+        Assert.assertEquals(200, htmlP.getWebResponse().getStatusCode());
+        Assert.assertEquals("OK", htmlP.getWebResponse().getStatusMessage());
+        System.out.println("OKEY 200");}
+        catch (HandlerException e){
+            e.printStackTrace();
+            e.getMessage();
+        }
+    }
+
     public void loadPage() {
         driver.get(getPageUrl());
         waitForPageLoaded(driver);
@@ -63,6 +82,7 @@ public class BasePage{
         System.out.println("Page load time is :  " + (loadEventEnd - navigationStart) / 1000 + " second");
         // js.executeScript("$(\"script[src=//cdn.callbackhunter.com/widget/tracker.js]\").remove()");
         System.out.println("Title is verified");
+
     }
     public void waitForPageLoaded(WebDriver driver) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
@@ -178,7 +198,7 @@ public class BasePage{
                 try {                                                                                                       //трай
                     emailBufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));        //в новый баф ридер запихиваем контент , который лежит в нашем урле
                     System.out.println("Сообщение успешно пришло на почту");                                                //если там чтото есть (getInputStream не равен нул) то показываем месседж
-                    System.out.println("Link for open mail : " + urlConnection);                                            //выводим адрес для доступа к почте
+                    System.out.println("Link for open mail : " +"\n"+ urlConnection);                                            //выводим адрес для доступа к почте
                 } catch (java.io.FileNotFoundException e) {                                                                 //если сообщение не пришло
                     System.out.println(" Попытка № " + times + " - сообщение не пришло");                                   //выдаем месседж + номер цикла
                     continue;                                                                                               //ПРОДОЛЖАЕМ

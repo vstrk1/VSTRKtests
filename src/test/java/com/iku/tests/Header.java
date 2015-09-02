@@ -2,6 +2,7 @@ package com.iku.tests;
 
 import com.inf.data.DataPages;
 import com.inf.pages.iku.ConstantElements;
+import com.inf.pages.iku.GeneralPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +13,7 @@ import org.testng.annotations.Test;
 public class Header  {
     public WebDriver driver;
     ConstantElements ce;
+    GeneralPage gp;
     //DriverFactory.BrowserType type = CHROME;
     @BeforeClass
     public void setup(){
@@ -25,6 +27,7 @@ public class Header  {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         ce = PageFactory.initElements(driver, ConstantElements.class);
+        gp = PageFactory.initElements(driver, GeneralPage.class);
     }
 
     @AfterClass
@@ -46,6 +49,11 @@ public class Header  {
     //ce.dd();
     }
 
+    @Test
+    public void tesForms() throws Exception {
+        gp.tetstGeneralPageForm();
+
+    }
 
 
 
