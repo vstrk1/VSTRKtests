@@ -74,20 +74,19 @@ public class BasePage{
 
     public void loadPage() {
         driver.get(getPageUrl());
-        waitForPageLoaded(driver);
+        //waitForPageLoaded(driver);
         long navigationStart = (Long) js.executeScript(("return window.performance.timing.navigationStart"));//начало загрузки страницы
         long loadEventEnd = (Long) js.executeScript("return window.performance.timing.loadEventEnd"); // окончание загрузки страницы
         wait.until(ExpectedConditions.titleContains(getPageTitle()));
         Assert.assertEquals(driver.getTitle(), getPageTitle());
         System.out.println("Page load time is :  " + (loadEventEnd - navigationStart) / 1000 + " second");
-        // js.executeScript("$(\"script[src=//cdn.callbackhunter.com/widget/tracker.js]\").remove()");
         System.out.println("Title is verified");
 
     }
     public void waitForPageLoaded(WebDriver driver) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+                return js.executeScript("return document.readyState").equals("complete");
             }
         };
         Wait<WebDriver> wait = new WebDriverWait(driver,60);
@@ -119,9 +118,18 @@ public class BasePage{
         //  Assert.assertTrue(!element.getTagName().isEmpty());
         System.out.println(element + " is verified");
     }
+
+    public void setElementText(WebElement element) {
+        verifyElementIsPresent(element);
+        element.clear();
+        String cnt = "TEST" + "QA " + new SimpleDateFormat("hhMMss").format(new Date());
+        element.sendKeys(cnt);
+        Assert.assertEquals(element.getAttribute("value"), cnt);
+    }
+
     public boolean verifyElementIsHaveLink(WebElement element, String text) {
         verifyElementIsPresent(element);
-        Assert.assertEquals(element.getAttribute("href"), text,"Element is not have link !"+"\n");
+        Assert.assertEquals(element.getAttribute("href"), text, "Element is not have link !" + "\n");
         //System.out.println("Element " + element + " have true link");
 
         return true;
@@ -147,12 +155,6 @@ public class BasePage{
         mouse.moveToElement(element).build().perform();
     }
 
-    public void setElementText(WebElement element) {
-        element.clear();
-        String cnt = "TEST" + "QA " + new SimpleDateFormat("hhMMss").format(new Date());
-        element.sendKeys(cnt);
-        Assert.assertEquals(element.getAttribute("value"), cnt);
-    }
 
     public void setEmailAdress(WebElement element) throws Exception {
         eMail = createEmail();

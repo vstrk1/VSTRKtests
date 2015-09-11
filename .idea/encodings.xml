@@ -6,7 +6,13 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/gameconkz/GeneralPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/gameconkz/StrongElements.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/ConstantElements.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/GeneralPage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/Contacts.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/General.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/News.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/Place.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/Program.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/Speakers.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/iku/tobePartner.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/race/ConferencePage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/race/ContactsPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/race/ExpoPage.java" charset="UTF-8" />
@@ -20,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/race/SponsorsPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/inf/pages/race/VisitsPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/gck/tests/TestGCK.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/iku/tests/NegativeF.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

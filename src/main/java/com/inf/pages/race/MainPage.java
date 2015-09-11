@@ -1,6 +1,5 @@
 package com.inf.pages.race;
 import com.inf.BasePage;
-import com.inf.NegativeForm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -65,11 +64,7 @@ public class MainPage extends BasePage {
 
 
     }
-    public void expampleOneField() throws Exception {
-       new NegativeForm( this.driver, phoneCallme,buttonPhoneCallme,popUpClose);
-       new NegativeForm(this.driver, nameSubscr, mailSubscr, buttonSubcr, popUpClose);
 
-    }
     public void testPhonePositive() throws Exception {
         verifyElementIsPresent(phoneCallme);
         setMobileNumber(phoneCallme);

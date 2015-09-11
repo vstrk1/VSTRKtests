@@ -163,11 +163,6 @@ public class ContentAndNForms {
     }
 
 
-    @Test
-    public void ttttttttt() throws  Exception{
-        mmPage.loadRACE();
-        mmPage.expampleOneField();
-    }
 
 
 
