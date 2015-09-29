@@ -25,7 +25,6 @@ public class NegativeF {
     public void setup(){
         System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
         this.driver = new ChromeDriver();
-
         //FirefoxProfile fp = new FirefoxProfile();
         //fp.setPreference("webdriver.load.strategy", "unstable"); // use 'fast'
         //this.driver = new FirefoxDriver(fp);
@@ -43,12 +42,10 @@ public class NegativeF {
         tbPartnerPage = PageFactory.initElements(driver,tobePartner.class);
         tbMediaPage = PageFactory.initElements(driver,tobeMedia.class);
     }
-
     @AfterClass
     public void teardown(){
         driver.quit();
     }
-
     @Test
     public void testForms() throws Exception {
         generalPage.formSubscr();
@@ -58,23 +55,14 @@ public class NegativeF {
         placePage.formSubscr();
         contactsPage.formSubscr();
     }
-
     @Test
     public void testForm() throws Exception {
         tbSpeakerPage.formSubscr();
         tbSponsorPage.formSubscr();
         tbPartnerPage.formSubscr();
     }
-
     @Test
     public void testForm1() throws Exception {
-
-
         tbMediaPage.formSubscr();
-
     }
-
-
-
-
 }

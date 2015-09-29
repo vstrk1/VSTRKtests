@@ -42,10 +42,5 @@ public class Header  {
     public void testHeader(String url, String title){
     ce.load(url, title);
     ce.checkFirstHeader();
-    //ce.dd();
     }
-
-
-
-
 }
